@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exported Users</title>
+</head>
+<body>
+<h1>Exported Users</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Contract Start Date</th>
+        <th>Contract End Date</th>
+        <th>Type</th>
+        <th>Verified</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.contractStartDate|date('Y-m-d') }}</td>
+            <td>{{ user.contractEndDate|date('Y-m-d') }}</td>
+            <td>{{ user.type }}</td>
+            <td>{{ user.verified ? 'Yes' : 'No' }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
